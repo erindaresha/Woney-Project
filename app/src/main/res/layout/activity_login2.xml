@@ -69,7 +69,8 @@
         android:layout_marginBottom="35dp"
         android:gravity="center_horizontal"
         android:text="Ganti akun lain"
-        android:textColor="@color/biru"
+        android:textColor="@color/blue"
+        android:gravity="center_horizontal"
         android:textSize="17sp" />
 
 </LinearLayout>

@@ -124,7 +124,6 @@ public class LoginActivity extends MasterActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
