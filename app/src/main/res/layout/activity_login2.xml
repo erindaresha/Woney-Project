@@ -62,15 +62,14 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/txtChanceAkun"
+        android:id="@+id/txtChangeAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="35dp"
+        android:gravity="center_horizontal"
         android:text="Ganti akun lain"
         android:textColor="@color/biru"
-        android:gravity="center_horizontal"
-        android:textSize="17sp"
-        />
+        android:textSize="17sp" />
 
 </LinearLayout>

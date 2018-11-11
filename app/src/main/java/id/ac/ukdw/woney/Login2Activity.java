@@ -6,6 +6,7 @@ import android.view.View;
 
 public class Login2Activity extends MasterActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

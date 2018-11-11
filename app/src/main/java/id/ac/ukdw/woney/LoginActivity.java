@@ -3,14 +3,23 @@ package id.ac.ukdw.woney;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 public class LoginActivity extends MasterActivity {
 
@@ -34,18 +43,21 @@ public class LoginActivity extends MasterActivity {
         txtCreateUser = (TextView) findViewById(R.id.txtCreateUser);
         mContext = this;
 
-        //pengecekan apakah user sudah pernah login atau belum
+        //pengecekan apakah user sudah login, dan pengecekan apakah user sudah pernah login atau belum
         if(sp.getBoolean("isLogin", false)) {
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
             finish();
         }
         else if(!sp.getBoolean("isLogin", false) && sp.getBoolean("pernahLogin", false)) {
-            Intent intent = new Intent(this, UserLoginActivity.class);
+            Intent intent = new Intent(this, Login2Activity.class);
             startActivity(intent);
             finish();
         }
 
+        //set listener
+        btnLogin.setOnClickListener(this);
+        txtCreateUser.setOnClickListener(this);
     }
 
     @Override
@@ -55,6 +67,57 @@ public class LoginActivity extends MasterActivity {
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnLogin :
+                login();
+                break;
+            case R.id.txtCreateUser :
+                break;
+        }
+    }
 
+    private void login() {
+        username = txtUsername.getText().toString();
+        password = txtPassword.getText().toString();
+        user.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                listUser = (ArrayList) dataSnapshot.getValue();
+                String uname = "", pass = "";
+                for (int i=0; i<listUser.size(); i++) {
+                    Map mapUser = (Map) listUser.get(i);
+                    uname += mapUser.get("username");
+                    pass += mapUser.get("password");
+                    if (uname.equals(username) && pass.equals(password)) {
+                        isLogin = true;
+                        spEdit.putBoolean("isLogin", true);
+                        spEdit.putBoolean("pernahLogin", true);
+                        spEdit.putString("username", username);
+                        spEdit.apply();
+                        Toast.makeText(mContext, "Login Berhasil", Toast.LENGTH_SHORT).show();
+                        Intent homeIntent = new Intent(mContext, HomeActivity.class);
+                        startActivity(homeIntent);
+                        finish();
+                        break;
+                    } else {
+                        isLogin = false;
+                        Toast.makeText(mContext, "Login Gagal", Toast.LENGTH_SHORT).show();
+                        uname = "";
+                        pass = "";
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void daftar() {
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
