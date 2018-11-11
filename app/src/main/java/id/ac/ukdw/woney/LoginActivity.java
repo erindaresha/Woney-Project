@@ -1,5 +1,6 @@
 package id.ac.ukdw.woney;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +29,16 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.btnLogin);
         txtCreateUser = (TextView) findViewById(R.id.txtCreateUser);
 
+        btnLogin.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openHomeActivity();
+            }
+        });
+    }
 
+    public void openHomeActivity(){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
 }

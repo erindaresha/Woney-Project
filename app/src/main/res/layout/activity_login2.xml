@@ -68,7 +68,7 @@
         android:layout_marginTop="35dp"
         android:layout_marginBottom="35dp"
         android:text="Ganti akun lain"
-        android:textColor="@color/biru"
+        android:textColor="@color/blue"
         android:gravity="center_horizontal"
         android:textSize="17sp"
         />
