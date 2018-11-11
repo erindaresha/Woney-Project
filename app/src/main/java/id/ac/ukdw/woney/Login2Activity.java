@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Login2Activity extends id.ac.ukdw.cobafirebase.MasterActivity {
+public class Login2Activity extends MasterActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

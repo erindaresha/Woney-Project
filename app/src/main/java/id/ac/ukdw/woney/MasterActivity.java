@@ -1,4 +1,4 @@
-package id.ac.ukdw.cobafirebase;
+package id.ac.ukdw.woney;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,8 +16,8 @@ public abstract class MasterActivity extends AppCompatActivity implements View.O
 
     SharedPreferences sp;
     SharedPreferences.Editor spEdit;
-    //FirebaseDatabase db = FirebaseDatabase.getInstance();
-    //DatabaseReference users = db.getReference("users");
+    FirebaseDatabase db = FirebaseDatabase.getInstance();
+    DatabaseReference user = db.getReference("user");
     ArrayList listUser = new ArrayList();
 
     @Override
