@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00877a</color>
+    <color name="colorAccent">#535152</color>
+    <color name="hijauWoney">#009688</color>
+    <color name="orange">#FFA500</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="biru">#4c4cff</color>
+</resources>
