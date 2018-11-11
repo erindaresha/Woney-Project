@@ -60,7 +60,7 @@ public class Login2Activity extends MasterActivity {
                 login();
                 break;
             case R.id.txtChangeAccount :
-                spEdit.putBoolean("pernahLogin", false);
+                spEdit.clear();
                 spEdit.apply();
                 Intent intent = new Intent(mContext, LoginActivity.class);
                 startActivity(intent);
