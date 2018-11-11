@@ -69,7 +69,9 @@ public class LoginActivity extends MasterActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnLogin :
-                login();
+                /*login();*/
+                Intent intent = new Intent(this, HomeActivity.class);
+                startActivity(intent);
                 break;
             case R.id.txtCreateUser :
                 break;
