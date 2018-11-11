@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends id.ac.ukdw.cobafirebase.MasterActivity {
 
     private EditText txtUsername;
     private EditText txtPassword;
@@ -20,7 +20,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
 
         //Inisialisasi
         txtUsername = (EditText) findViewById(R.id.txtUsername);
@@ -28,6 +27,16 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.btnLogin);
         txtCreateUser = (TextView) findViewById(R.id.txtCreateUser);
 
+
+    }
+
+    @Override
+    public int getLayoutResourceID() {
+        return R.layout.activity_login;
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }

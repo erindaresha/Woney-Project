@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "463262961250",
+    "firebase_url": "https://woney-acdf9.firebaseio.com",
+    "project_id": "woney-acdf9",
+    "storage_bucket": "woney-acdf9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463262961250:android:26ac47b090761524",
+        "android_client_info": {
+          "package_name": "id.ac.ukdw.woney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463262961250-v7ucni9gvelbau2ishage97s38tj3114.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.ukdw.woney",
+            "certificate_hash": "b453fa7ea6e2012210d9f2d45fca59c2697f62fa"
+          }
+        },
+        {
+          "client_id": "463262961250-265bvv5o8jbujeranqgt2nn5sougafae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCynX3AJjhOukgnMxIUy9EqjL6k7vsXFzs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463262961250-265bvv5o8jbujeranqgt2nn5sougafae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
