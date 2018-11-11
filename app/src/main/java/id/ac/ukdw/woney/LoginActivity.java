@@ -83,16 +83,26 @@ public class LoginActivity extends MasterActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listUser = (ArrayList) dataSnapshot.getValue();
-                String uname = "", pass = "";
+                String uname = "", pass = "", email = "", name = "", pin = "", saldo = "";
                 for (int i=0; i<listUser.size(); i++) {
                     Map mapUser = (Map) listUser.get(i);
                     uname += mapUser.get("username");
                     pass += mapUser.get("password");
+                    name += mapUser.get("name");
+                    email += mapUser.get("email");
+                    pin += mapUser.get("pin");
+                    saldo += mapUser.get("saldo");
                     if (uname.equals(username) && pass.equals(password)) {
                         isLogin = true;
                         spEdit.putBoolean("isLogin", true);
                         spEdit.putBoolean("pernahLogin", true);
                         spEdit.putString("username", username);
+                        spEdit.putString("nama", name);
+                        spEdit.putString("password", password);
+                        spEdit.putString("pin", pin);
+                        spEdit.putString("email", email);
+                        Float f = Float.parseFloat(saldo);
+                        spEdit.putFloat("saldo", f);
                         spEdit.apply();
                         Toast.makeText(mContext, "Login Berhasil", Toast.LENGTH_SHORT).show();
                         Intent homeIntent = new Intent(mContext, HomeActivity.class);
@@ -104,6 +114,10 @@ public class LoginActivity extends MasterActivity {
                         Toast.makeText(mContext, "Login Gagal", Toast.LENGTH_SHORT).show();
                         uname = "";
                         pass = "";
+                        pin = "";
+                        name = "";
+                        email = "";
+                        saldo = "";
                     }
                 }
             }
