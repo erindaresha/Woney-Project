@@ -115,6 +115,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< Updated upstream
       <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/HomeFragment.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -123,19 +124,35 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/LoginActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-47">
+              <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="AccountFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/AccountFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="65">
               <caret line="22" column="77" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="77" />
+=======
+      <file leaf-file-name="HomeActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/HomeActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="fragment_home.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
           <provider editor-type-id="text-editor">
@@ -164,6 +181,34 @@
                 <element signature="e#3132#3133#0" expanded="true" />
                 <element signature="e#3177#3178#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="NotificationHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/NotificationHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/HomeFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="901">
+              <caret line="73" column="54" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MasterActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/MasterActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="19" column="53" selection-start-line="18" selection-start-column="4" selection-end-line="19" selection-end-column="53" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -2466,16 +2511,28 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/HomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/Login2Activity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/MasterActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/NotificationHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/SignUpActivity.java" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml" />
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/AccountFragment.java" />
+<<<<<<< Updated upstream
+=======
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/SignUpActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/NotificationHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/HomeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/LoginActivity.java" />
+>>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/HomeFragment.java" />
       </list>
     </option>
@@ -2492,8 +2549,11 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+<<<<<<< Updated upstream
       <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+=======
+>>>>>>> Stashed changes
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2514,19 +2574,14 @@
             </path>
             <path>
               <item name="Woney-Project" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="Woney-Project" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2661,7 +2716,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
+=======
+    <frame x="-1" y="0" width="1368" height="769" extended-state="6" />
+    <editor active="true" />
+>>>>>>> Stashed changes
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -2674,12 +2734,20 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32843137" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.329653" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.49924242" weight="0.3267974" />
+=======
+      <window_info active="true" anchor="bottom" id="Logcat" order="7" sideWeight="0.49924242" visible="true" weight="0.3280757" />
+>>>>>>> Stashed changes
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+<<<<<<< Updated upstream
       <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.32843137" />
+=======
+      <window_info anchor="bottom" id="Build" order="7" weight="0.329653" />
+>>>>>>> Stashed changes
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
@@ -2704,6 +2772,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/HomeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -2721,6 +2790,15 @@
         </state>
       </provider>
     </entry>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="99" column="58" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1394">
@@ -2746,6 +2824,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/MasterFragment.java" />
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/nav_items.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state />
@@ -2776,11 +2855,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/NotificationHelper.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
           <caret line="60" column="1" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
         </state>
       </provider>
+<<<<<<< Updated upstream
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
       <provider editor-type-id="text-editor">
@@ -2795,6 +2878,10 @@
         <state relative-caret-position="360">
           <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
+=======
+      <provider editor-type-id="android-designer2">
+        <state />
+>>>>>>> Stashed changes
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/LoginActivity.java">
@@ -2804,6 +2891,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/Login2Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -2818,6 +2906,21 @@
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml">
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+>>>>>>> Stashed changes
         <state />
       </provider>
     </entry>
@@ -2828,8 +2931,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml">
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/SignUpActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="-1260" />
       </provider>
     </entry>
@@ -2868,6 +2987,48 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="1003">
+          <caret line="113" column="44" selection-start-line="113" selection-start-column="44" selection-end-line="113" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/NotificationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/HomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/MasterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" column="53" selection-start-line="18" selection-start-column="4" selection-end-line="19" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/id/ac/ukdw/woney/HomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="73" column="54" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="54" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
