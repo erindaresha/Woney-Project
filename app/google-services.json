@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "463262961250-qmlm8l744v3ess7mqji4ancb3q3on5mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.ac.ukdw.woney",
+            "certificate_hash": "a62cc83b58939ae085bd01abbc9520f853ad2ea1"
+          }
+        },
+        {
           "client_id": "463262961250-265bvv5o8jbujeranqgt2nn5sougafae.apps.googleusercontent.com",
           "client_type": 3
         }
