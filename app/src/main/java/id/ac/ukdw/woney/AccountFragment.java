@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -65,10 +66,11 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnLogoutFragmentLogout :
-                spEdit.clear();
+                spEdit.putBoolean("isLogin", false);
                 spEdit.commit();
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
+                Toast.makeText(getActivity(), "Anda Telah Logout", Toast.LENGTH_SHORT).show();
                 getActivity().finish();
                 break;
         }
