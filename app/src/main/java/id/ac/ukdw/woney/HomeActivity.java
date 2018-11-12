@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends MasterActivity {
     private BottomNavigationView navMainNav;
     private FrameLayout frmMainFrame;
 
@@ -72,5 +72,15 @@ public class HomeActivity extends AppCompatActivity {
                 fragmentTransaction.commit();
             }
         });
+    }
+
+    @Override
+    public int getLayoutResourceID() {
+        return R.layout.activity_home;
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

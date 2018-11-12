@@ -2,9 +2,7 @@ package id.ac.ukdw.woney;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,8 +13,6 @@ import android.widget.Toast;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -44,12 +40,7 @@ public class LoginActivity extends MasterActivity {
         mContext = this;
 
         //pengecekan apakah user sudah login, dan pengecekan apakah user sudah pernah login atau belum
-        if(sp.getBoolean("isLogin", false)) {
-            Intent intent = new Intent(this, HomeActivity.class);
-            startActivity(intent);
-            finish();
-        }
-        else if(!sp.getBoolean("isLogin", false) && sp.getBoolean("pernahLogin", false)) {
+        if(sp.getBoolean("pernahLogin", false)) {
             Intent intent = new Intent(this, Login2Activity.class);
             startActivity(intent);
             finish();
