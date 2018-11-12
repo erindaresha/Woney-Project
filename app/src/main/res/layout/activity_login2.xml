@@ -50,7 +50,7 @@
         android:inputType="textPassword"/>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnLogin2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -62,15 +62,14 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/txtChanceAkun"
+        android:id="@+id/txtChangeAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="35dp"
-        android:text="Ganti akun lain"
-        android:textColor="@color/biru"
         android:gravity="center_horizontal"
-        android:textSize="17sp"
-        />
+        android:text="Ganti akun lain"
+        android:textColor="#4c4cff"
+        android:textSize="17sp" />
 
 </LinearLayout>
