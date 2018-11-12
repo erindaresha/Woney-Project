@@ -74,6 +74,7 @@ public class LoginActivity extends MasterActivity {
                 startActivity(intent);
                 break;
             case R.id.txtCreateUser :
+                daftar();
                 break;
         }
     }
