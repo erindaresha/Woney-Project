@@ -69,24 +69,65 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="30dp">
 
             <TextView
-                android:id="@+id/txtInfoAkun"
+                android:id="@+id/txtChangeNameBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Info Akun"
-                android:textSize="18sp"/>
+                android:layout_marginTop="12dp"
+                android:text="Nama Tampilan"
+                android:textColor="@android:color/black"
+                android:textSize="21sp"/>
+            <TextView
+                android:id="@+id/txtChangeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Charles EKa S"
+                android:textSize="15sp"/>
 
+            <TextView
+                android:id="@+id/txtChangeEmailBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Email"
+                android:textColor="@android:color/black"
+                android:textSize="21sp"/>
+            <TextView
+                android:id="@+id/txtEmailName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Charles.eka@example.com"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/txtChangePassBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Ganti password"
+                android:textColor="@android:color/black"
+                android:textSize="21sp"/>
+
+            <TextView
+                android:id="@+id/txtChangePinBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Ganti PIN"
+                android:textColor="@android:color/black"
+                android:textSize="21sp"/>
 
             <Button
-                android:id="@+id/btnLogoutFragmentLogout"
+                android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="60dp"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:background="@drawable/my_button"
-                android:text="KELUAR"
+                android:text="KELUAR  AKUN"
                 android:textColor="@color/white"
                 android:textFontWeight="bold"
                 android:textSize="16sp" />

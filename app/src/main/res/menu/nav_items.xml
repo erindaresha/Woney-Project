@@ -11,10 +11,10 @@
         android:id="@+id/nav_transaction"
         android:icon="@drawable/ic_compare_arrows_black"
         android:title="@string/nav_transaction" />
-    <item
+    <!--<item
         android:id="@+id/nav_history"
         android:icon="@drawable/ic_history_black"
-        android:title="@string/nav_history" />
+        android:title="@string/nav_history" />-->
     <item
         android:id="@+id/nav_account"
         android:icon="@drawable/ic_perm_identity_black"

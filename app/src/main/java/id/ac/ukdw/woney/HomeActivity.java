@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-public class HomeActivity extends MasterActivity {
+public class HomeActivity extends AppCompatActivity {
     private BottomNavigationView navMainNav;
     private FrameLayout frmMainFrame;
 
@@ -52,10 +52,10 @@ public class HomeActivity extends MasterActivity {
                         setFragment(transactionFragment);
                         return true;
 
-                    case R.id.nav_history:
+                    /*case R.id.nav_history:
                         navMainNav.setItemBackgroundResource(R.color.colorPrimary);
                         setFragment(historyFragment);
-                        return true;
+                        return true;*/
 
                     case R.id.nav_account:
                         navMainNav.setItemBackgroundResource(R.color.colorPrimary);
@@ -72,15 +72,5 @@ public class HomeActivity extends MasterActivity {
                 fragmentTransaction.commit();
             }
         });
-    }
-
-    @Override
-    public int getLayoutResourceID() {
-        return R.layout.activity_home;
-    }
-
-    @Override
-    public void onClick(View v) {
-
     }
 }

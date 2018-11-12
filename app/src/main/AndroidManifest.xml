@@ -22,7 +22,13 @@
         <activity android:name=".Login2Activity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".CobaActivity"></activity>
+        <activity android:name=".CobaActivity" />
+        <activity android:name=".TransferActivity" />
+        <activity android:name=".CekTransferActivity" />
+        <activity android:name=".ChangeNameActivity" />
+        <activity android:name=".ChangeEmailActivity" />
+        <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".ChangePINActivity"></activity>
     </application>
 
 </manifest>
