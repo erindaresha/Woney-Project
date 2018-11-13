@@ -52,7 +52,7 @@ public class Login2Activity extends MasterActivity {
                 break;
             case R.id.txtChangeAccount :
                 spEdit.clear();
-                spEdit.apply();
+                spEdit.commit();
                 Intent intent = new Intent(mContext, LoginActivity.class);
                 startActivity(intent);
                 finish();

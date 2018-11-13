@@ -35,7 +35,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     SharedPreferences sp;
     SharedPreferences.Editor spEdit;
     private TextView txtName, txtUsername, txtSaldo, txtSend;
-    String nama, username;
+    String nama="", username="";
     float saldo;
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference user = db.getReference("user");
@@ -66,21 +66,23 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 nama = sp.getString("nama", null);
                 username = sp.getString("username", null);
-                listUser = (ArrayList) dataSnapshot.getValue();
-                String _saldo="", _username="";
-                for (int i = 0; i < listUser.size(); i++) {
-                    Map mapUser = (Map) listUser.get(i);
-                    _username += mapUser.get("username");
-                    if (username.equals(_username)) {
-                        _saldo += mapUser.get("saldo");
-                        Float f = Float.parseFloat(_saldo);
-                        txtName.setText(nama);
-                        txtUsername.setText(username);
-                        txtSaldo.setText(formatRupiah.format(f));
-                        break;
-                    } else {
-                        _username = "";
-                        _saldo = "";
+                if (username != null) {
+                    listUser = (ArrayList) dataSnapshot.getValue();
+                    String _saldo="", _username="";
+                    for (int i = 0; i < listUser.size(); i++) {
+                        Map mapUser = (Map) listUser.get(i);
+                        _username += mapUser.get("username");
+                        if (username.equals(_username)) {
+                            _saldo += mapUser.get("saldo");
+                            Float f = Float.parseFloat(_saldo);
+                            txtName.setText(nama);
+                            txtUsername.setText(username);
+                            txtSaldo.setText(formatRupiah.format(f));
+                            break;
+                        } else {
+                            _username = "";
+                            _saldo = "";
+                        }
                     }
                 }
             }

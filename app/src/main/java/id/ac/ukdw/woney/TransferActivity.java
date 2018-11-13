@@ -75,8 +75,6 @@ public class TransferActivity extends MasterActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnBayar :
-                Intent intent = new Intent(mContext, CekTransferActivity.class);
-                startActivity(intent);
                 edtUsername = findViewById(R.id.edtUsername);
                 edtSaldo = findViewById(R.id.edtSaldo);
                 username = edtUsername.getText().toString();
