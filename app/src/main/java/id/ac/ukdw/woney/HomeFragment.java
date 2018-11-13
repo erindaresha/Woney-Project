@@ -97,7 +97,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.txtSend :
-                Intent intent = new Intent(getActivity(), TransferActivity.class);
+                Intent intent = new Intent(getActivity(), CekTransferActivity.class);
                 startActivity(intent);
                 break;
         }

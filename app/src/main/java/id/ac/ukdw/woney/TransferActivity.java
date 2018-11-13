@@ -1,6 +1,7 @@
 package id.ac.ukdw.woney;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -74,6 +75,8 @@ public class TransferActivity extends MasterActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnBayar :
+                Intent intent = new Intent(mContext, CekTransferActivity.class);
+                startActivity(intent);
                 edtUsername = findViewById(R.id.edtUsername);
                 edtSaldo = findViewById(R.id.edtSaldo);
                 username = edtUsername.getText().toString();
