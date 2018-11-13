@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/black"
                 android:layout_marginTop="30dp"
-                android:text="Charles Eka S"
+                android:text=""
                 android:layout_toRightOf="@+id/imgPhotoProfil"
                 android:textSize="25sp"
                 android:layout_marginLeft="15dp"/>
@@ -50,7 +50,7 @@
                 android:id="@+id/txtUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cha61197"
+                android:text=""
                 android:layout_toRightOf="@+id/imgPhotoProfil"
                 android:layout_below="@id/txtName"
                 android:textSize="15sp"
@@ -84,7 +84,7 @@
                 android:id="@+id/txtChangeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Charles EKa S"
+                android:text=""
                 android:textSize="15sp"/>
 
             <TextView
@@ -99,7 +99,7 @@
                 android:id="@+id/txtEmailName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Charles.eka@example.com"
+                android:text=""
                 android:textSize="15sp"/>
 
             <TextView

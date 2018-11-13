@@ -24,8 +24,8 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
     NumberFormat nf;
     SharedPreferences sp;
     SharedPreferences.Editor spEdit;
-    private TextView txtName, txtUsername, txtSaldo;
-    String nama, username;
+    private TextView txtName, txtUsername, txtSaldo, txtChangeName, txtEmailName;
+    String nama, username, email;
     float saldo;
     Button btnLogout;
     TextView txtChangeNameBtn;
@@ -54,11 +54,14 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         txtChangeEmailBtn = view.findViewById(R.id.txtChangeEmailBtn);
         txtChangePassBtn = view.findViewById(R.id.txtChangePassBtn);
         txtChangePinBtn = view.findViewById(R.id.txtChangePinBtn);
+        txtChangeName = view.findViewById(R.id.txtChangeName);
+        txtEmailName = view.findViewById(R.id.txtEmailName);
 
         //txtSaldo = view.findViewById(R.id.txtSaldo);
 
         nama = sp.getString("nama", null);
         username = sp.getString("username", null);
+        email = sp.getString("email", null);
         //saldo = (float)sp.getFloat("saldo", 0);
         btnLogout.setOnClickListener(this);
         txtChangeNameBtn.setOnClickListener(this);
@@ -67,6 +70,8 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         txtChangePinBtn.setOnClickListener(this);
         txtName.setText(nama);
         txtUsername.setText(username);
+        txtEmailName.setText(email);
+        txtChangeName.setText(nama);
 //        String Saldo = "Rp ";
 //        Saldo += nf.format((double)saldo) + ",-";
 //        txtSaldo.setText(Saldo);

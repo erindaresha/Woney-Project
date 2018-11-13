@@ -107,7 +107,6 @@ public class LoginActivity extends MasterActivity {
                         break;
                     } else {
                         isLogin = false;
-                        Toast.makeText(mContext, "Login Gagal", Toast.LENGTH_SHORT).show();
                         uname = "";
                         pass = "";
                         pin = "";
@@ -116,6 +115,7 @@ public class LoginActivity extends MasterActivity {
                         saldo = "";
                     }
                 }
+                if(!isLogin) Toast.makeText(mContext, "Login Gagal", Toast.LENGTH_SHORT).show();
             }
 
             @Override

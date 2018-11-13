@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     NumberFormat nf;
     SharedPreferences sp;
     SharedPreferences.Editor spEdit;
-    private TextView txtName, txtUsername, txtSaldo;
+    private TextView txtName, txtUsername, txtSaldo, txtSend;
     String nama, username;
     float saldo;
     FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -78,6 +78,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                         txtUsername.setText(username);
                         txtSaldo.setText(formatRupiah.format(f));
                         break;
+                    } else {
+                        _username = "";
+                        _saldo = "";
                     }
                 }
             }
