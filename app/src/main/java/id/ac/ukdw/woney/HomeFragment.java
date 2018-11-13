@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
             }
         });
-
+        txtSend.setOnClickListener(this);
         return view;
     }
 
