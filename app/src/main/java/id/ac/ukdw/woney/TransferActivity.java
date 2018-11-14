@@ -33,6 +33,7 @@ public class TransferActivity extends MasterActivity {
     EditText edtUsername, edtSaldo;
     SimpleDateFormat sdf;
     Date date;
+    boolean selesai;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,19 +47,21 @@ public class TransferActivity extends MasterActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 nama = sp.getString("nama", null);
                 username = sp.getString("username", null);
-                listUser = (ArrayList) dataSnapshot.getValue();
-                String _saldo="", _username="";
-                for (int i = 0; i < listUser.size(); i++) {
-                    Map mapUser = (Map) listUser.get(i);
-                    _username += mapUser.get("username");
-                    if (username.equals(_username)) {
-                        _saldo += mapUser.get("saldo");
-                        Float f = Float.parseFloat(_saldo);
-                        txtSaldoAktif.setText(formatRupiah.format(f));
-                        break;
-                    } else {
-                        _username = "";
-                        _saldo = "";
+                if (username != null) {
+                    listUser = (ArrayList) dataSnapshot.getValue();
+                    String _saldo = "", _username = "";
+                    for (int i = 0; i < listUser.size(); i++) {
+                        Map mapUser = (Map) listUser.get(i);
+                        _username += mapUser.get("username");
+                        if (username.equals(_username)) {
+                            _saldo += mapUser.get("saldo");
+                            Float f = Float.parseFloat(_saldo);
+                            txtSaldoAktif.setText(formatRupiah.format(f));
+                            break;
+                        } else {
+                            _username = "";
+                            _saldo = "";
+                        }
                     }
                 }
             }
@@ -88,7 +91,7 @@ public class TransferActivity extends MasterActivity {
                 saldo = edtSaldo.getText().toString();
                 storedUsername = sp.getString("username", null);
                 if(isValidate()) {
-                    bayar();
+                    retrieveTransaksi();
                 }
                 break;
         }
@@ -104,13 +107,12 @@ public class TransferActivity extends MasterActivity {
         return valid;
     }
 
-    public void bayar() {
-        final Float _saldo = Float.parseFloat(saldo);
-        final String waktu = sdf.format(date);
-        transaksi.addValueEventListener(new ValueEventListener() {
+    public void retrieveTransaksi() {
+        transaksi.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listTransaksi = (ArrayList) dataSnapshot.getValue();
+                TransferActivity.this.bayar();
             }
 
             @Override
@@ -118,20 +120,25 @@ public class TransferActivity extends MasterActivity {
 
             }
         });
+    }
+    public void bayar() {
+        final Float _saldo = Float.parseFloat(saldo);
+        final String waktu = sdf.format(date);
         user.addListenerForSingleValueEvent(new ValueEventListener() {
             boolean status = false;
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listUser = (ArrayList) dataSnapshot.getValue();
                 String uname = "", Saldo = "", email = "", nama = "", password = "", pin = "";
                 String usernameSumber = sp.getString("username", null);
-                for (int i=0; i<listUser.size(); i++) {
+                for (int i = 0; i < listUser.size(); i++) {
                     Map mapUser = (Map) listUser.get(i);
                     uname += mapUser.get("username");
-                    if(uname.equals(usernameSumber)) {
+                    if (uname.equals(usernameSumber)) {
                         Saldo += mapUser.get("saldo");
                         Float f = Float.parseFloat(Saldo);
-                        if(_saldo > f) {
+                        if (_saldo > f) {
                             status = false;
                             break;
                         }
@@ -178,7 +185,8 @@ public class TransferActivity extends MasterActivity {
                             status = false;
                         }
                     }
-                    if (!status) Toast.makeText(mContext, "Pembayaran gagal", Toast.LENGTH_LONG).show();
+                    if (!status)
+                        Toast.makeText(mContext, "Pembayaran gagal", Toast.LENGTH_LONG).show();
                 }
             }
 
