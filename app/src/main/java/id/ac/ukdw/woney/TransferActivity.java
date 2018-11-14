@@ -16,24 +16,30 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
 public class TransferActivity extends MasterActivity {
     TextView txtSaldoAktif;
-    String nama, username, saldo;
+    String nama, username, saldo, storedUsername;
     Context mContext;
     Locale localeID = new Locale("in", "ID");
     NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
     Button btnBayar;
     EditText edtUsername, edtSaldo;
+    SimpleDateFormat sdf;
+    Date date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         txtSaldoAktif = findViewById(R.id.txtSaldoAktif);
         btnBayar = findViewById(R.id.btnBayar);
+        sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
         user.addValueEventListener(new ValueEventListener() {
             @Override
@@ -76,9 +82,11 @@ public class TransferActivity extends MasterActivity {
         switch (v.getId()) {
             case R.id.btnBayar :
                 edtUsername = findViewById(R.id.edtUsername);
+                date = new Date();
                 edtSaldo = findViewById(R.id.edtSaldo);
                 username = edtUsername.getText().toString();
                 saldo = edtSaldo.getText().toString();
+                storedUsername = sp.getString("username", null);
                 if(isValidate()) {
                     bayar();
                 }
@@ -87,13 +95,29 @@ public class TransferActivity extends MasterActivity {
     }
 
     public boolean isValidate() {
-        if (!username.matches("") && !saldo.matches(""))
-            return true;
-        else return false;
+        boolean valid = false;
+        if (!username.matches("") && !saldo.matches("")) {
+            Float cek = Float.parseFloat(saldo);
+            if (cek > 0) valid = true;
+        }
+        else valid = false;
+        return valid;
     }
 
     public void bayar() {
         final Float _saldo = Float.parseFloat(saldo);
+        final String waktu = sdf.format(date);
+        transaksi.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                listTransaksi = (ArrayList) dataSnapshot.getValue();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         user.addListenerForSingleValueEvent(new ValueEventListener() {
             boolean status = false;
             @Override
@@ -117,6 +141,15 @@ public class TransferActivity extends MasterActivity {
                         spEdit.putFloat("saldo", f);
                         spEdit.commit();
                         user.setValue(listUser);
+                        Map mapTransaksi = new HashMap();
+                        Float saldo_transfer = _saldo;
+                        mapTransaksi.put("username_pengirim", storedUsername);
+                        mapTransaksi.put("username_penerima", username);
+                        mapTransaksi.put("saldo", saldo_transfer);
+                        mapTransaksi.put("jenis_transaksi", "Transfer");
+                        mapTransaksi.put("waktu", waktu);
+                        listTransaksi.add(mapTransaksi);
+                        transaksi.setValue(listTransaksi);
                         status = true;
                         break;
                     } else {
@@ -138,6 +171,7 @@ public class TransferActivity extends MasterActivity {
                             user.setValue(listUser);
                             Toast.makeText(mContext, "Pembayaran berhasil dilakukan", Toast.LENGTH_LONG).show();
                             status = true;
+                            finish();
                             break;
                         } else {
                             uname = "";

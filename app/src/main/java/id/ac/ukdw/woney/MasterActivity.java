@@ -19,7 +19,7 @@ public abstract class MasterActivity extends AppCompatActivity implements View.O
     SharedPreferences.Editor spEdit;
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference user = db.getReference("user");
-    DatabaseReference transaksi = db.getReference("transaksi");
+    DatabaseReference transaksi = db.getReference().child("transaksi");
     ArrayList listUser = new ArrayList();
     ArrayList listTransaksi = new ArrayList();
     Context mContext;
