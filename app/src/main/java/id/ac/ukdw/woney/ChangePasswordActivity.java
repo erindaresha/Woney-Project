@@ -56,9 +56,26 @@ public class ChangePasswordActivity extends MasterActivity {
     }
 
     public boolean isValidated() {
+        status = false;
         if (!oldPass.matches("") && !pass1.matches("") && !pass2.matches("")) {
-            return true;
-        } else return false;
+            if (oldPass.equals(storedPassword)) {
+                if (pass1.equals(pass2)) {
+                    if (oldPass.equals(pass1)) {
+                        status = false;
+                        Toast.makeText(mContext, "Password tidak boleh sama dengan password lama", Toast.LENGTH_SHORT).show();
+                    } else {
+                        status = true;
+                    }
+                } else {
+                    status = false;
+                    Toast.makeText(mContext, "Password yang dimasukkan tidak sama", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                status = false;
+                Toast.makeText(mContext, "Password lama tidak sesuai", Toast.LENGTH_SHORT).show();
+            }
+        } else return status = false;
+        return status;
     }
 
     public void changePassword() {
@@ -68,34 +85,22 @@ public class ChangePasswordActivity extends MasterActivity {
                 status = false;
                 String username = "";
                 listUser = (ArrayList) dataSnapshot.getValue();
-                if (oldPass.equals(storedPassword)) {
-                    if (pass1.equals(pass2)) {
-                        if (oldPass.equals(pass1)) {
-                            status = false;
-                            Toast.makeText(mContext, "Password tidak boleh sama dengan password lama", Toast.LENGTH_SHORT).show();
-                        } else {
-                            status = true;
-                        }
-                    }
-                }
-                if(status) {
-                    for (int i=0; i<listUser.size(); i++) {
-                        Map mapUser = (Map) listUser.get(i);
-                        username += mapUser.get("username");
-                        if (username.equals(storedUsername)) {
-                            mapUser.put("password", pass1);
-                            listUser.set(i, mapUser);
-                            user.setValue(listUser);
-                            spEdit.putString("password", pass1);
-                            spEdit.commit();
-                            status = true;
-                            Toast.makeText(mContext, "Password berhasil diubah", Toast.LENGTH_SHORT).show();
-                            finish();
-                            break;
-                        } else {
-                            username = "";
-                            status = false;
-                        }
+                for (int i=0; i<listUser.size(); i++) {
+                    Map mapUser = (Map) listUser.get(i);
+                    username += mapUser.get("username");
+                    if (username.equals(storedUsername)) {
+                        mapUser.put("password", pass1);
+                        listUser.set(i, mapUser);
+                        user.setValue(listUser);
+                        spEdit.putString("password", pass1);
+                        spEdit.commit();
+                        status = true;
+                        Toast.makeText(mContext, "Password berhasil diubah", Toast.LENGTH_SHORT).show();
+                        finish();
+                        break;
+                    } else {
+                        username = "";
+                        status = false;
                     }
                 }
             }
