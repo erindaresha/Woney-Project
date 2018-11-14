@@ -1,5 +1,6 @@
 package id.ac.ukdw.woney;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -20,6 +21,8 @@ public abstract class MasterActivity extends AppCompatActivity implements View.O
     DatabaseReference user = db.getReference("user");
     DatabaseReference transaksi = db.getReference("transaksi");
     ArrayList listUser = new ArrayList();
+    ArrayList listTransaksi = new ArrayList();
+    Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

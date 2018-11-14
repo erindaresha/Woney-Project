@@ -114,6 +114,8 @@ public class TransferActivity extends MasterActivity {
                         f -= _saldo;
                         Saldo = Float.toString(f);
                         mapUser.put("saldo", Saldo);
+                        spEdit.putFloat("saldo", f);
+                        spEdit.commit();
                         user.setValue(listUser);
                         status = true;
                         break;

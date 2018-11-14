@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -33,6 +40,8 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
     TextView txtChangePassBtn;
     TextView txtChangePinBtn;
     View view;
+    FirebaseDatabase db = FirebaseDatabase.getInstance();
+    DatabaseReference user = db.getReference("user");
 
     public AccountFragment() {
         // Required empty public constructor
@@ -58,23 +67,30 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         txtEmailName = view.findViewById(R.id.txtEmailName);
 
         //txtSaldo = view.findViewById(R.id.txtSaldo);
-
-        nama = sp.getString("nama", null);
-        username = sp.getString("username", null);
-        email = sp.getString("email", null);
         //saldo = (float)sp.getFloat("saldo", 0);
         btnLogout.setOnClickListener(this);
         txtChangeNameBtn.setOnClickListener(this);
         txtChangeEmailBtn.setOnClickListener(this);
         txtChangePassBtn.setOnClickListener(this);
         txtChangePinBtn.setOnClickListener(this);
-        txtName.setText(nama);
-        txtUsername.setText(username);
-        txtEmailName.setText(email);
-        txtChangeName.setText(nama);
-//        String Saldo = "Rp ";
-//        Saldo += nf.format((double)saldo) + ",-";
-//        txtSaldo.setText(Saldo);
+
+        user.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                nama = sp.getString("nama", null);
+                username = sp.getString("username", null);
+                email = sp.getString("email", null);
+                txtName.setText(nama);
+                txtUsername.setText(username);
+                txtEmailName.setText(email);
+                txtChangeName.setText(nama);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         return view;
     }
