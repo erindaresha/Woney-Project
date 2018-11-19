@@ -59,17 +59,17 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         if(transaction.status == "kirim"){
             holder.imgTransaction.setImageResource(R.drawable.red_arrow);
             holder.txtValue.setTextColor(mContext.getResources().getColor(R.color.red));
-            holder.txtValue.setText("- " + transaction.value + " IDR");
+            holder.txtValue.setText("- " + transaction.value);
         }
         else if(transaction.status == "terima"){
             holder.imgTransaction.setImageResource(R.drawable.green_arrow);
             holder.txtValue.setTextColor(mContext.getResources().getColor(R.color.green));
-            holder.txtValue.setText("+ " + transaction.value + " IDR");
+            holder.txtValue.setText("+ " + transaction.value);
         }
         else{
             holder.imgTransaction.setImageResource(R.drawable.blue_circle);
             holder.txtValue.setTextColor(mContext.getResources().getColor(R.color.blue));
-            holder.txtValue.setText("+ " + transaction.value + " IDR");
+            holder.txtValue.setText("+ " + transaction.value);
         }
     }
 

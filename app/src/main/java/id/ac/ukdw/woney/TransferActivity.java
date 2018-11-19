@@ -129,65 +129,74 @@ public class TransferActivity extends MasterActivity {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Map mapTransaksi = new HashMap();
+                boolean status_username_penerima_valid = false;
                 listUser = (ArrayList) dataSnapshot.getValue();
-                String uname = "", Saldo = "", email = "", nama = "", password = "", pin = "";
+                String uname = "", Saldo = "", email = "", nama = "", password = "", pin = "", nama_penerima= "";
                 String usernameSumber = sp.getString("username", null);
                 for (int i = 0; i < listUser.size(); i++) {
+                    System.out.println(i);
                     Map mapUser = (Map) listUser.get(i);
                     uname += mapUser.get("username");
                     if (uname.equals(usernameSumber)) {
                         Saldo += mapUser.get("saldo");
                         Float f = Float.parseFloat(Saldo);
+                        nama += mapUser.get("name");
                         if (_saldo > f) {
                             status = false;
+                            Saldo = "";
+                            nama = "";
+                            uname = "";
+                            nama_penerima = "";
                             break;
                         }
-                        f -= _saldo;
-                        Saldo = Float.toString(f);
-                        mapUser.put("saldo", Saldo);
-                        spEdit.putFloat("saldo", f);
-                        spEdit.commit();
-                        user.setValue(listUser);
-                        Map mapTransaksi = new HashMap();
-                        Float saldo_transfer = _saldo;
-                        mapTransaksi.put("username_pengirim", storedUsername);
-                        mapTransaksi.put("username_penerima", username);
-                        mapTransaksi.put("saldo", saldo_transfer);
-                        mapTransaksi.put("jenis_transaksi", "Transfer");
-                        mapTransaksi.put("waktu", waktu);
-                        listTransaksi.add(mapTransaksi);
-                        transaksi.setValue(listTransaksi);
-                        status = true;
-                        break;
-                    } else {
-                        uname = "";
+                        if (status_username_penerima_valid) {
+                            f -= _saldo;
+                            Saldo = Float.toString(f);
+                            mapUser.put("saldo", Saldo);
+                            spEdit.putFloat("saldo", f);
+                            spEdit.commit();
+                            user.setValue(listUser);
+                            status = true;
+                        }
                     }
-                }
-                uname = "";
-                Saldo = "";
-                if (status) {
-                    for (int i = 0; i < listUser.size(); i++) {
-                        Map mapUser = (Map) listUser.get(i);
-                        uname += mapUser.get("username");
+                    if (!status_username_penerima_valid) {
                         if (uname.equals(username)) {
                             Saldo += mapUser.get("saldo");
+                            nama_penerima += mapUser.get("name");
+                            System.out.println(Saldo);
                             Float f = Float.parseFloat(Saldo);
                             f += _saldo;
                             Saldo = Float.toString(f);
                             mapUser.put("saldo", Saldo);
                             user.setValue(listUser);
-                            Toast.makeText(mContext, "Pembayaran berhasil dilakukan", Toast.LENGTH_LONG).show();
-                            status = true;
-                            finish();
-                            break;
-                        } else {
-                            uname = "";
-                            status = false;
-                        }
+                            mapTransaksi.put("nama_penerima", nama_penerima);
+                            status_username_penerima_valid = true;
+                            nama = "";
+                            i = -1;
+                        } else status_username_penerima_valid = false;
                     }
-                    if (!status)
-                        Toast.makeText(mContext, "Pembayaran gagal", Toast.LENGTH_LONG).show();
+                    uname = "";
+                    Saldo = "";
                 }
+                uname = "";
+                Saldo = "";
+                if (status) {
+                    Float saldo_transfer = _saldo;
+                    mapTransaksi.put("nama_pengirim", nama);
+                    mapTransaksi.put("username_pengirim", storedUsername);
+                    mapTransaksi.put("username_penerima", username);
+                    mapTransaksi.put("saldo", saldo_transfer);
+                    mapTransaksi.put("jenis_transaksi", "Transfer");
+                    mapTransaksi.put("waktu", waktu);
+                    listTransaksi.add(mapTransaksi);
+                    transaksi.setValue(listTransaksi);
+                    Toast.makeText(mContext, "Pembayaran berhasil dilakukan", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+                else
+                    Toast.makeText(mContext, "Pembayaran gagal", Toast.LENGTH_LONG).show();
+
             }
 
             @Override
