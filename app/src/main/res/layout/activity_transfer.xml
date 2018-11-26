@@ -28,7 +28,7 @@
         android:textSize="21sp"/>
 
     <EditText
-        android:id="@+id/txtInputKepada"
+        android:id="@+id/edtUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -36,6 +36,7 @@
         android:inputType="textPersonName"/>
 
     <TextView
+        android:id="@+id/txtInputSaldo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -43,13 +44,13 @@
         android:textSize="21sp"/>
 
     <EditText
-        android:id="@+id/txtInputJumlah"
+        android:id="@+id/edtSaldo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:drawableStart="@drawable/ic_rp"
         android:drawablePadding="@dimen/activity_horizontal_margin"
-        android:inputType="numberDecimal"/>
+        android:inputType="number"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -65,9 +66,10 @@
             android:layout_marginStart="16dp"/>
 
         <TextView
+            android:id="@+id/txtSaldoAktif"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rp 30.000"
+            android:text=""
             android:textColor="@color/hijauWoney"
             android:textSize="12sp"
             android:layout_alignParentTop="true"

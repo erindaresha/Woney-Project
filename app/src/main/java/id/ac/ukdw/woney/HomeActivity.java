@@ -1,5 +1,6 @@
 package id.ac.ukdw.woney;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
@@ -13,6 +14,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
 public class HomeActivity extends MasterActivity {
     private BottomNavigationView navMainNav;
     private FrameLayout frmMainFrame;
@@ -21,6 +26,7 @@ public class HomeActivity extends MasterActivity {
     private TransactionFragment transactionFragment;
     private HistoryFragment historyFragment;
     private AccountFragment accountFragment;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,7 @@ public class HomeActivity extends MasterActivity {
 
         frmMainFrame = (FrameLayout) findViewById(R.id.main_frame);
         navMainNav = (BottomNavigationView) findViewById(R.id.main_nav);
+        context = this;
 
         homeFragment = new HomeFragment();
         transactionFragment = new TransactionFragment();
@@ -72,6 +79,19 @@ public class HomeActivity extends MasterActivity {
                 fragmentTransaction.commit();
             }
         });
+
+//        user.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                NotificationHelper nh = new NotificationHelper(context);
+//                nh.createNotification("Woney", "Transaksi berhasil dilakukan");
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     @Override

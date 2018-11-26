@@ -66,7 +66,7 @@
                         android:layout_below="@id/imgPhotoProfil"
                         android:layout_marginTop="@dimen/activity_vertical_margin"
                         android:gravity="center_horizontal"
-                        android:text="Charles Eka Swandi"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:textSize="20sp" />
 
@@ -76,7 +76,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txtName"
                         android:gravity="center_horizontal"
-                        android:text="Cha61197" />
+                        android:text="" />
 
                     <TextView
                         android:id="@+id/txtSaldo"
@@ -85,7 +85,7 @@
                         android:layout_below="@id/txtUsername"
                         android:layout_marginTop="15dp"
                         android:gravity="center_horizontal"
-                        android:text="RP. 30.000,-"
+                        android:text=""
                         android:textColor="@color/hijauWoney"
                         android:textSize="25sp" />
 
